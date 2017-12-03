@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const methodOverride = require('method-override');
 
-const mongoURI = 'mongodb://localhost:27071/auth';
+const mongoURI = 'mongodb://localhost:27017/auth';
 mongoose.connect(mongoURI, { useMongoClient: true});
 mongoose.Promise = global.Promise;
 
@@ -34,15 +34,23 @@ const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
 
 //ROUTES
-app.get('/', (req, res) => {
-  res.render('index.ejs');
-});
+// app.get('/', (req, res) => {
+//   res.render('index.ejs');
+// });
 
 
 app.get('/', (req, res) => {
   res.render('index.ejs', {
       currentUser: req.session.currentuser
   });
+});
+
+app.get('/app',  (req, res) => {
+if (req.session.currentuser) {
+  res.send('space ghost faces');
+} else {
+  res.redirect('/sessions/new');
+  }
 });
 
 app.listen(PORT, () => {

@@ -6,14 +6,6 @@ router.get('/new', (req, res) => {
   res.render('sessions/new.ejs');
 });
 
-router.post('/', async (req, res) => {
-  const foundUser = await User.findOne({ username: req.body.username});
-  if (req.body.password == foundUser.password) {
-    res.send('logged in');
-  } else {
-    res.send('wrong password');
-  }
-});
 
 router.post('/', async (req, res) => {
   const foundUser = await User.findOne({ username: req.body.username});

@@ -5,26 +5,30 @@
         <title></title>
     </head>
     <body>
-        <h1>Welcome!</h1>
-        <h1>
-          <% if (currentUser) { %>
-            Welcome <%=currentUser.username%>!
-            <% } else { %>
-              Welcome!
-          <% } %>
-        </h1>
-        <nav>
-            <ul>
-                <li><a href="/sessions/new">Log In</a></li>
-                <li><a href="/users/new">Register</a></li>
-            </ul>
-        </nav>
+
+      <h1>
         <% if (currentUser) { %>
-          <li>
-          <form action='/sessions?_method=DELETE' method='POST'>
-            <input type="submit" value="Logout"/>
-          </form>
-          </li>
+          Welcome <%= currentUser.username %>!
+          <% } else { %>
+            Welcome!
         <% } %>
+      </h1>
+      <nav>
+          <ul>
+              <li><a href="/sessions/new">Log In</a></li>
+              <li><a href="/users/new">Register</a></li>
+              <% if (currentUser) { %>
+                <main>
+                  Welcome to <a href='/app'>SPACE GHOST FACES</a>
+                </main>
+                <li>
+                <form action='/sessions?_method=DELETE' method='POST'>
+                  <input type="submit" value="Logout"/>
+                </form>
+                </li>
+              <% } %>
+          </ul>
+      </nav>
+
     </body>
 </html>
