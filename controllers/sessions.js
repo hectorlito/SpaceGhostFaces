@@ -27,6 +27,20 @@ router.get('/profile/:id', async (req, res) => {
 }
 });
 
+//path to edit page
+router.get('/profile/edit/:id', async (req, res) => {
+  const foundId = await User.findOne({ _id: req.params.id})
+  console.log("working");
+  res.render('./sessions/edit.ejs', {foundId})
+});
+
+//path back from edit to database--redirect to profile page
+router.put('/profile/edit/:id', async (req, res) => {
+const foundId = await User.findByIdAndUpdate(req.params.id, req.body)
+console.log(req.body);
+res.redirect('/sessions/profile/' + req.params.id)
+// res.send('put route working')
+})
 
 
 router.delete('/', (req, res) => {

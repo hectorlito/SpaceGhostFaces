@@ -7,10 +7,17 @@
   <body>
     <h1>Welcome to space ghost faces</h1>
       <% console.log("who is this??", foundId); %>
+      <h3>Name: <%= foundId.username %></h3>
+      <h3>Profile photo<%= foundId.img %></h3>
+      <h3>Relationship Status: <%= foundId.inlove %></h3>
 
+
+  <button type="button" onclick="location.href = '/sessions/profile/edit/<%= foundId._id%>';">Edit Profile</button>
     <form action='/sessions?_method=DELETE' method='POST'>
       <input type="submit" value="Logout"/>
     </form>
-    </form>
+    <form action="/sessions/profile/edit/<%= foundId._id;%>?_method=DELETE" method="POST">
+      <input type="submit" value="Delete This Profile" />
+  </form>
   </body>
 </html>
