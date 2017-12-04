@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const session = require('express-session');
 const methodOverride = require('method-override');
 
-const mongoURI = 'mongodb://localhost:27017/auth';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/auth';
 mongoose.connect(mongoURI, { useMongoClient: true});
 mongoose.Promise = global.Promise;
 
