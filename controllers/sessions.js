@@ -7,6 +7,11 @@ router.get('/new', (req, res) => {
   res.render('sessions/new.ejs');
 });
 
+router.get('/main', async (req, res) => {
+  const allProfiles = await User.find();
+  res.render('sessions/main.ejs', {allProfiles})
+})
+
 //login
 router.post('/login', async (req, res) => {
   const foundUser = await User.findOne({ username: req.body.username});
@@ -19,6 +24,7 @@ router.post('/login', async (req, res) => {
 });
 //specific id
 router.get('/profile/:id', async (req, res) => {
+
   try{
   const foundId = await User.findOne({ _id: req.params.id});
   res.render('./sessions/profile.ejs', {foundId});
@@ -42,14 +48,18 @@ res.redirect('/sessions/profile/' + req.params.id)
 // res.send('put route working')
 })
 
-
+//Logout
 router.delete('/', (req, res) => {
     req.session.destroy();
     res.redirect('/');
 });
 
-
-
+//delete
+router.delete('/profile/edit/:id', async (req, res) => {
+  const deleteId = await User.findByIdAndRemove(req.params.id);
+    // req.session.destroy();
+    res.redirect('/');
+});
 
 
 module.exports = router;

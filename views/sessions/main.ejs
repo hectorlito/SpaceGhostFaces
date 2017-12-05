@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>All Profiles</h2>
+    <% for (let Profile of allProfiles) { %>
+      <a href= '/sessions/main/<%= Profile._id %>'><img src="<%= Profile.img %>" ></a>
+    <% } %>
+
+  </body>
+</html>

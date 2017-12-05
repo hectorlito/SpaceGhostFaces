@@ -5,14 +5,21 @@
     <title></title>
   </head>
   <body>
-<h3>working</h3>
+    <% include ../partials/head.ejs %>
+
+<h3>Edit your Profile</h3>
+
 
 <form action='/sessions/profile/edit/<%= foundId._id%>?_method=PUT' method='post'>
-      <input type="text" name="username" value="<%=foundId.username%>"/>
-      <input type="text" name="img" value="<%=foundId.img%>"/>
-      <input type="text" name="inlove" value="<%=foundId.inlove%>"/>
+      <input type="text" name="username" value="<%=foundId.username%>" placeholder="username"/>
+      <input type="text" name="img" value="<%=foundId.img%>" placeholder="photo link"/>
+      <input type="text" name="inlove" value="<%=foundId.inlove%>" placeholder="relationship status"/>
+
 
   <input type="submit" value="Submit Changes"/>
+</form>
+<form action='/sessions/profile/edit/<%= foundId._id%>?_method=PUT' method='post'>
+    <input type="submit" value="NVM"/>
 </form>
   </body>
 </html>
