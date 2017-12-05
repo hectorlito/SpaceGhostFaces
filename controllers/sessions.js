@@ -27,7 +27,8 @@ router.get('/profile/:id', async (req, res) => {
 
   try{
   const foundId = await User.findOne({ _id: req.params.id});
-  res.render('./sessions/profile.ejs', {foundId});
+  console.log("username???", req.session.currentuser);
+  res.render('./sessions/profile.ejs', {foundId: foundId, currentuser: req.session.currentuser});
 } catch(err) {
   res.send(err.message);
 }
