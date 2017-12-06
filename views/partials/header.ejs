@@ -1,0 +1,17 @@
+<div class="nav nav-tabs heading">
+  <div class="icon">
+    <a  href="/sessions/main/"><img class="icon" src="http://icons.iconarchive.com/icons/enos-layuk/hanna-barbera-heroes/64/Space-Ghost-icon.png" alt="Space Ghost">
+    </a>
+  </div>
+
+  <div class="direction">
+    <form class="nav" action="" method="post">
+      <button class="nav border" type="button" onclick="location.href = '/sessions/profile/<%= currentuser._id%>';">Profile</button>
+  </form>
+
+  <form class="nav" action="/sessions?_method=DELETE" method="post">
+      <input class="border" type='submit' value='Log Out'/>
+    </form>
+  </div>
+
+</div>

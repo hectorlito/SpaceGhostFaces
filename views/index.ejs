@@ -3,20 +3,23 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-    </head>
-    <body>
+        <% include ./partials/head.ejs %>
 
+    </head>
+    <body class="welcome">
+      <div >
       <h1>
         <% if (currentUser) { %>
           Welcome <%= currentUser.username %>!
           <% } else { %>
-            Welcome!
+            Space Ghost
         <% } %>
       </h1>
+      <h6>from Coast to Coast</h6>
       <nav>
           <ul>
-              <li><a href="/sessions/new">Log In</a></li>
-              <li><a href="/users/new">Register</a></li>
+              <li><a class="weltext" href="/sessions/new">Log In</a></li>
+              <li><a class="weltext" href="/users/new">Register</a></li>
               <% if (currentUser) { %>
                 <main>
                   Welcome to <a href='/app'>SPACE GHOST FACES</a>
@@ -29,6 +32,6 @@
               <% } %>
           </ul>
       </nav>
-
+    </div>
     </body>
 </html>

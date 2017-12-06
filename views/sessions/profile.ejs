@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    
     <title>YOUR PROFILE</title>
+    <% include ../partials/head.ejs %>
   </head>
   <body>
-    <% include ../partials/head.ejs %>
+
+    <% include ../partials/header.ejs %>
       <% console.log("who is this??", foundId); %>
       <h3>Name: <%= foundId.name %></h3>
 
       <h3>Profile photo<img src="<%= foundId.img %>" alt=""></h3>
       <h3>Relationship Status: <%= foundId.inlove %></h3>
 
-      <% if (foundId._id === currentuser._id){ %> hi
+      <% if (foundId._id != currentuser._id){ %>
       <% }  else { %>
          <button type="button" onclick="location.href = '/sessions/profile/edit/<%= foundId._id%>';">Edit Profile</button>
       <% } %>
 
-    <form action='/sessions?_method=DELETE' method='POST'>
-      <input type="submit" value="Logout"/>
-    </form>
-    <form action="/sessions/profile/edit/<%= foundId._id;%>?_method=DELETE" method="POST">
-      <input type="submit" value="Delete This Profile" />
+      <% if (foundId._id != currentuser._id){ %>
+      <% }  else { %>
+        <form action="/sessions/profile/edit/<%= foundId._id;%>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete This Profile" />
+      </form>
+      <% } %>
 
-  </form>
+
   </body>
 </html>

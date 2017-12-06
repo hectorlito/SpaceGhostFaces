@@ -9,7 +9,7 @@ router.get('/new', (req, res) => {
 
 router.get('/main', async (req, res) => {
   const allProfiles = await User.find();
-  res.render('sessions/main.ejs', {allProfiles})
+  res.render('sessions/main.ejs', {allProfiles, currentuser: req.session.currentuser})
 })
 
 //login
@@ -22,6 +22,7 @@ router.post('/login', async (req, res) => {
     res.send('wrong password');
   }
 });
+
 //specific id
 router.get('/profile/:id', async (req, res) => {
 
@@ -38,7 +39,7 @@ router.get('/profile/:id', async (req, res) => {
 router.get('/profile/edit/:id', async (req, res) => {
   const foundId = await User.findOne({ _id: req.params.id})
   console.log("working");
-  res.render('./sessions/edit.ejs', {foundId})
+  res.render('./sessions/edit.ejs', {foundId, currentuser: req.session.currentuser})
 });
 
 //path back from edit to database--redirect to profile page
@@ -55,7 +56,7 @@ router.delete('/', (req, res) => {
     res.redirect('/');
 });
 
-//delete
+//delete profile
 router.delete('/profile/edit/:id', async (req, res) => {
   const deleteId = await User.findByIdAndRemove(req.params.id);
     // req.session.destroy();
