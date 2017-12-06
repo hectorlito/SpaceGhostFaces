@@ -7,19 +7,21 @@
 
     </head>
     <body class="welcome">
-      <div >
-      <h1>
-        <% if (currentUser) { %>
-          Welcome <%= currentUser.username %>!
-          <% } else { %>
-            Space Ghost
-        <% } %>
-      </h1>
-      <h6>from Coast to Coast</h6>
+      <div class="main">
+        <div class="mainsizing">
+          <h1 class="space">
+            <% if (currentUser) { %>
+              Welcome <%= currentUser.username %>!
+              <% } else { %>
+                Space Ghost
+            <% } %>
+          </h1>
+    </div>
+      <h6 class="coast">GA Coast to Coast</h6>
       <nav>
           <ul>
-              <li><a class="weltext" href="/sessions/new">Log In</a></li>
-              <li><a class="weltext" href="/users/new">Register</a></li>
+              <li class="weltext"><a class="weltext" href="/sessions/new">Log In</a></li>
+              <li class="weltext"><a class="weltext" href="/users/new">Register</a></li>
               <% if (currentUser) { %>
                 <main>
                   Welcome to <a href='/app'>SPACE GHOST FACES</a>

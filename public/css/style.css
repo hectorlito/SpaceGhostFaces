@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Caveat|Kalam|Kaushan+Script|Sorts+Mill+Goudy|Yellowtail');
+
+.mainsizing{
+  margin-top: 20%;
+  margin-left: 15%;
+}
+.space{
+font-family: 'Caveat', cursive;
+font-size: 700%;
+color: black;
+}
+
+.coast{
+  font-family: 'Kalam', cursive;
+  font-size: 200%;
+  margin-left: 20%;
+  font-style: bold;
+  color:black;
+}
+
 .smallify{
     border: 1px solid red;
     display: block;
@@ -9,20 +29,29 @@
     height: auto;
     margin: 10px auto;
 }
-/*.josefinasIdea{
+.josefinasIdea{
   background-color: green;
-  height:254px;
-  width: 254px;
+  max-height:250px;
+  max-width: 250px;
 
-}*/
+}
  .welcome{
 background-image: url(../images/space-ghost-background-wallpaper-yellow-modern-simple-wallpapers.jpg);
 background-size:cover;
-color: 
+background-repeat: no-repeat;
 }
+
 .weltext{
   color:black;
   text-decoration:none;
+  list-style-type: none;
+  font-size: 20px;
+  margin-left: 15%;
+  font-family: 'Sorts Mill Goudy', serif;
+
+}
+.weltext:hover{
+  color:white;
 }
 /*
 *{
