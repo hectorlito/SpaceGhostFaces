@@ -7,20 +7,20 @@
   <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
+<div class="form-style-6edit">
 
-<h3>Edit your Profile</h3>
+<h3 class="editpage">Edit your Profile</h3>
 
-
-<form action='/sessions/profile/edit/<%= foundId._id%>?_method=PUT' method='post'>
+  <form class="editform" action='/sessions/profile/edit/<%= foundId._id%>?_method=PUT' method='post'>
       <input type="text" name="name" value="<%=foundId.name%>" placeholder="Display Name"/>
       <input type="text" name="img" value="<%=foundId.img%>" placeholder="photo link"/>
       <input type="text" name="inlove" value="<%=foundId.inlove%>" placeholder="relationship status"/>
+      <div id="buttoncontainer">
+      <input class="btn-outline-danger editsubmit" type="submit" value="Submit Changes"/>
+      <input class="btn-outline-danger editno" type="submit" value="No Thanks"/>
+    </div>
+  </form>
 
-
-  <input type="submit" value="Submit Changes"/>
-</form>
-<form action='/sessions/profile/edit/<%= foundId._id%>?_method=PUT' method='post'>
-    <input type="submit" value="NVM"/>
-</form>
+</div>
   </body>
 </html>
