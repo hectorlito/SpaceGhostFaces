@@ -171,9 +171,9 @@ margin: 2px ;
 
 }
 
-.deletebtn{
+/*.deletebtn{
 margin-left: 1087%;
-}
+}*/
 
 img.profilephoto{
     display: block;
@@ -192,6 +192,9 @@ img.profilephoto{
     width: 100%;
     background-color: black;
     color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 h3 {
