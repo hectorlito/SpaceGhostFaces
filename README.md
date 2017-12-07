@@ -28,7 +28,7 @@ To view all profiles, click the SpaceGhost icon on the top left corner.
 # Approach
 
 I started the project with the Authentication Build. I wanted that to be a necessity in order to access the website.
-[Registration Page](public/images/register.png)
+![Registration Page](public/images/register.png)
 
 ### Author
 
