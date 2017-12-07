@@ -59,7 +59,7 @@ router.delete('/', (req, res) => {
 //delete profile
 router.delete('/profile/edit/:id', async (req, res) => {
   const deleteId = await User.findByIdAndRemove(req.params.id);
-    // req.session.destroy();
+    req.session.destroy();
     res.redirect('/');
 });
 
