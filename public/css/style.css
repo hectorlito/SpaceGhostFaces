@@ -25,6 +25,11 @@ width: 100px;
   color: #2f2f42;
 }
 
+.profilespace{
+  /*margin-left: 2px;*/
+  margin-right: 2px;
+}
+
 /*************Main page fonts*************/
 .space{
 font-family: 'Caveat', cursive;
@@ -75,14 +80,17 @@ background-repeat: no-repeat;
     height: auto;
     margin-top:20px;
     margin-left: 100px;
-    box-shadow: 5px 10px 18px #888888;
+    box-shadow: 5px 5px 5px #888888;
 }
 .josefinasIdea{
-  background-color:white;
+  background-color:#212432;
   max-height:250px;
   max-width: 250px;
 }
-
+.mainname{
+  margin-top: 20px;
+  margin-left: 100px;
+}
 /************* login page*******************/
 .loginpage{
   font-family: 'Kalam', cursive;
@@ -192,11 +200,16 @@ h3 {
 }
 .paragraph{
   /*border: 3px solid  #020369;*/
-  margin: 10px 250px;
+  margin: 10px 350px;
   font-size: 20px;
   font-family: 'Dosis', sans-serif;
 }
-
+.paragraph2{
+  /*border: 3px solid  #020369;*/
+  margin: 10px 450px;
+  font-size: 20px;
+  font-family: 'Dosis', sans-serif;
+}
 .who{
   margin-left: 7%;
 }
