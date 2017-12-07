@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+
     <title>YOUR PROFILE</title>
     <% include ../partials/head.ejs %>
   </head>
@@ -9,23 +9,25 @@
 
     <% include ../partials/header.ejs %>
       <% console.log("who is this??", foundId); %>
-      <h3>Name: <%= foundId.name %></h3>
 
-      <h3>Profile photo<img src="<%= foundId.img %>" alt=""></h3>
-      <h3>Relationship Status: <%= foundId.inlove %></h3>
+      <img class="profilephoto"  src="<%= foundId.img %>" alt="">
+      <h3 class="profilename"> <%= foundId.name %></h3>
 
+      <h4 class="who">who am i?</h4>
+      <h4 class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<%= foundId.bio%></h4>
+    <div class="profilebtns footer">
       <% if (foundId._id != currentuser._id){ %>
       <% }  else { %>
-         <button type="button" onclick="location.href = '/sessions/profile/edit/<%= foundId._id%>';">Edit Profile</button>
+         <button class="btn btn-warning" type="button" onclick="location.href = '/sessions/profile/edit/<%= foundId._id%>';">Edit Profile</button>
       <% } %>
 
       <% if (foundId._id != currentuser._id){ %>
       <% }  else { %>
         <form action="/sessions/profile/edit/<%= foundId._id;%>?_method=DELETE" method="POST">
-          <input type="submit" value="Delete This Profile" />
+          <input class="btn btn-warning deletebtn" type="submit" value="Delete This Profile" />
       </form>
       <% } %>
-
+    </div>
 
   </body>
 </html>
