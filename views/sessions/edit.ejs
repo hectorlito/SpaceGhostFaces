@@ -14,7 +14,7 @@
   <form class="editform" action='/sessions/profile/edit/<%= foundId._id%>?_method=PUT' method='post'>
       <input type="text" name="name" value="<%=foundId.name%>" placeholder="Display Name"/>
       <input type="text" name="img" value="<%=foundId.img%>" placeholder="photo link"/>
-      <input type="text" name="bio" value="<%=foundId.bio%>" placeholder="Bio"/>
+      <input type="text" name="bio" value="<%=foundId.bio%>" placeholder="Bio"/>  <input type="text" name="status" value="<%=foundId.status%>" placeholder="What's on your mind?"/>
       <div id="buttoncontainer">
       <input class="btn-outline-danger editsubmit" type="submit" value="Submit Changes"/>
       <input class="btn-outline-danger editno" type="submit" value="No Thanks"/>

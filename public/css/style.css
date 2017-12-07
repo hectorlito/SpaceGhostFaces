@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Caveat|Kalam|Kaushan+Script|Sorts+Mill+Goudy|Yellowtail');
-
+@import url('https://fonts.googleapis.com/css?family=Dosis');
 /*************general on all pages**********/
 body {
-  background-color: #252839;
-  color: #b5b5b7;
+  background-color: #212432;
+  color: #b3c2bf;
 }
 
 /*****************header on all pages********/
@@ -21,7 +21,7 @@ width: 100px;
 
 .border{
   border: 1px solid black;
-  background-color: white;
+  background-color: #FFB90D;
   color: #2f2f42;
 }
 
@@ -65,7 +65,7 @@ background-repeat: no-repeat;
 
 /***********Show page with all accounts***********/
 .smallify{
-    border: 1px solid red;
+    border: 1px solid white;
     display: block;
     max-width:250px;
     max-height:250px;
@@ -73,10 +73,12 @@ background-repeat: no-repeat;
     min-height:250px;*/
     width: auto;
     height: auto;
-    margin: 10px auto;
+    margin-top:20px;
+    margin-left: 100px;
+    box-shadow: 5px 10px 18px #888888;
 }
 .josefinasIdea{
-  background-color: green;
+  background-color:white;
   max-height:250px;
   max-width: 250px;
 }
@@ -158,26 +160,21 @@ margin: 2px ;
 .profilebtns{
   display:flex;
   font-family: 'Sorts Mill Goudy', serif;
+
 }
 
 .deletebtn{
 margin-left: 1087%;
 }
 
-/*.profilephoto{
-  max-width: 400px;
-    height: 400px;
-    border: 5px solid #020369;
-    margin: 5px auto;
-    margin-left: 37%;
-}*/
-
 img.profilephoto{
     display: block;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     max-width: 500px;
       height: 500px;
+      box-shadow: 5px 10px 18px #888888;
 }
 
 .footer{
@@ -190,16 +187,26 @@ img.profilephoto{
 }
 
 h3 {
-  /*margin-left: 45%;*/
   text-align: center;
+  margin-top: 25px;
 }
 .paragraph{
   /*border: 3px solid  #020369;*/
-  margin: 10px 100px;
-  font-size: 30px;
-  font-family: 'Sorts Mill Goudy', serif;
+  margin: 10px 250px;
+  font-size: 20px;
+  font-family: 'Dosis', sans-serif;
 }
 
 .who{
   margin-left: 7%;
+}
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), red, rgba(0, 0, 0, 0));
+    /*background-color: #729f98;*/
+}
+
+.profilestatus{
+  text-align: center;
 }
